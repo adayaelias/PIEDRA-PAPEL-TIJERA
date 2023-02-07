@@ -66,8 +66,22 @@ public class MoveWords{
 	    second_i = getIndex(second);
 
 	    if (first_i == second_i) return EMPATE;
-	    
-	    return (( (first_i +1) % validMoves.length ) == second_i ) ? GANA: PIERDE;
+
+		//con if pongo todas las opciones ganadoras y si no coincide con ninguna de estas por descarte es "pierde".
+		//Mi modificación:
+
+		if (first.equals("TIJERAS") && (second.equals("LAGARTO") || second.equals("PAPEL"))) {
+			return GANA;
+		} else if (first.equals("PAPEL") && (second.equals("SPOCK") || second.equals("PIEDRA"))) {
+			return GANA;
+		} else if (first.equals("PIEDRA") && (second.equals("LAGARTO") || second.equals("TIJERAS"))) {
+			return GANA;
+		}else if (first.equals("LAGARTO") && (second.equals("SPOCK") || second.equals("PAPEL"))) {
+			return GANA;
+		} else if (first.equals("SPOCK") && (second.equals("TIJERAS") || second.equals("PIEDRA"))) {
+			return GANA;
+		}else return PIERDE;
+
 	}
 	
 } 
