@@ -6,7 +6,7 @@ public class MoveWords{
     public static final int GANA = 1;
     public static final int PIERDE = 2;
 
-    private static final String[] validMoves = {"TIJERAS", "PAPEL", "PIEDRA", "LAGARTO", "SPOCK"};
+    private static final String[] validMoves = {"TIJERAS", "PAPEL", "PIEDRA", "TORITO", "SEPIA"};
     private static final String[] validCommands = {"SALIR", "HELP"};
 
     private Random rnd;
@@ -70,15 +70,15 @@ public class MoveWords{
 		//con if pongo todas las opciones ganadoras y si no coincide con ninguna de estas por descarte es "pierde".
 		//Mi modificación:
 
-		if (first.equals("TIJERAS") && (second.equals("LAGARTO") || second.equals("PAPEL"))) {
+		if (first.equals("TIJERAS") && (second.equals("TORITO") || second.equals("PAPEL"))) {
 			return GANA;
-		} else if (first.equals("PAPEL") && (second.equals("SPOCK") || second.equals("PIEDRA"))) {
+		} else if (first.equals("PAPEL") && (second.equals("SEPIA") || second.equals("PIEDRA"))) {
 			return GANA;
-		} else if (first.equals("PIEDRA") && (second.equals("LAGARTO") || second.equals("TIJERAS"))) {
+		} else if (first.equals("PIEDRA") && (second.equals("TORITO") || second.equals("TIJERAS"))) {
 			return GANA;
-		}else if (first.equals("LAGARTO") && (second.equals("SPOCK") || second.equals("PAPEL"))) {
+		}else if (first.equals("TORITO") && (second.equals("SEPIA") || second.equals("PAPEL"))) {
 			return GANA;
-		} else if (first.equals("SPOCK") && (second.equals("TIJERAS") || second.equals("PIEDRA"))) {
+		} else if (first.equals("SEPIA") && (second.equals("TIJERAS") || second.equals("PIEDRA"))) {
 			return GANA;
 		}else return PIERDE;
 
